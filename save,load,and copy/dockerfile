@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+RUN apt update
+
+RUN apt install python3 -y
+
+RUN apt -y install sqlite3
+
+RUN apt install python3-pip -y
+
+COPY requirements.txt /home/requirements.txt
+RUN pip3 install -r /home/requirements.txt
